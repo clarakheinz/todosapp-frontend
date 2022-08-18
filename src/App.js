@@ -1,24 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Todo from './Components/Todo';
+import { useEffect, useState } from 'react';
+import TodoForm from './Components/TodoForm';
+import TodosPage from './pages/TodosPage';
+import TodoDetails from './pages/TodoDetails';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 function App() {
+// would not typically hardcode ulrs, put into a config/context file for app
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+   <BrowserRouter>
+     <Routes>
+      <Route path="/" element={<TodosPage />}/>
+      <Route path=":id" element={<TodoDetails/>} />
+    </Routes>
+   </BrowserRouter> 
+  </div>
   );
 }
 
