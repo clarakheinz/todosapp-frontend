@@ -16,6 +16,11 @@ export default function Todo(props) {
       setIsDoneState(!isDoneState);
   }
 
+  const handleDelete = async () => {
+    let resp = await fetch(`http://localhost:5050/todos/${id}`, {method: "DELETE"});
+  }
+
+// create card/modal that pops up with response of request
     return (
       <li id = {id} className= {`todo ${isDoneState ? "isDone" : ""}`}>
         <Link to={id}>{description}</Link>
@@ -25,6 +30,7 @@ export default function Todo(props) {
         {isDoneState &&
         <button onClick={handleClick}>Undo</button>
         }
+        <button onClick={handleDelete}>DELETE</button>
       </li>
     );
   }

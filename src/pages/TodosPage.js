@@ -22,7 +22,7 @@ export default function TodosPage() {
 
   
         <ul>
-          {todos.map((todo)=>(
+          {todos && todos.map((todo)=>(
             <Todo id={todo._id} description={todo.description} isDone={todo.isDone} />
           ))}
         </ul>

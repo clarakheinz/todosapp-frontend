@@ -17,8 +17,9 @@ useEffect(()=>{
 
 return(
 <div>
-    <header>Todos Details</header>
-    <h2>{params.id}</h2>
+    <header>Todo Details</header>
+    <h3>{todo.description}</h3>
+    <p>{params.id}</p>
     <p>Is this task complete? {todo.isDone ? "Yes" : "No"}</p>
 
 </div>
