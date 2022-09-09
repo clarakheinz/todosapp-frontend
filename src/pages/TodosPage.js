@@ -1,5 +1,6 @@
 import Todo from '../Components/Todo';
 import {useState, useEffect} from 'react';
+import AppBar from '../Components/AppBar';
 
 
 export default function TodosPage() {
@@ -17,6 +18,7 @@ export default function TodosPage() {
 
     return(
         <div>
+          <AppBar/>
         <header>To do list</header>
         &nbsp;
 
